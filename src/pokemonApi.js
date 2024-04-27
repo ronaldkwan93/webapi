@@ -25,6 +25,10 @@ async function putDataOnPage(dataToDisplay){
     } else {
         type2Display.textContent = "";
     }
+
+    let imageContainer = document.getElementsByClassName("pokemonImage")[0];
+    let imageElement = imageContainer.getElementsByTagName("IMG")[0];
+    imageElement.src = dataToDisplay.sprites.front_shiny;
 }
 
 // Button calls this
