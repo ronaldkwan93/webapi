@@ -28,7 +28,14 @@ async function putDataOnPage(dataToDisplay){
 
     let imageContainer = document.getElementsByClassName("pokemonImage")[0];
     let imageElement = imageContainer.getElementsByTagName("IMG")[0];
-    imageElement.src = dataToDisplay.sprites.front_shiny;
+    
+    let shinyResult = Math.floor(Math.random() * 4) + 1;
+    if (shinyResult == 1 ) {
+        imageElement.src = dataToDisplay.sprites.front_shiny;
+        console.log("Shiny Pokemon Found!")
+    } else {
+        imageElement.src = dataToDisplay.sprites.front_default;
+    }
 }
 
 // Button calls this
